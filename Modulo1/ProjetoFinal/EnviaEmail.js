@@ -44,7 +44,6 @@ diferente, que atenda ao solicitado.
 ##########################################################################################
 */
 
-
 // Trecho do código fornecido.
 const enviarEmail = (addressee, subject, body) => {
     if (!addressee) {

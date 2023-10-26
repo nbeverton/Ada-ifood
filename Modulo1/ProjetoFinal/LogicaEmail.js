@@ -1,5 +1,7 @@
 // Importa a função EnviaEmail
 const enviarEmail = require('./EnviaEmail');
+const {assuntoDoEmail, corpoDoEmail} = require('./CorpoEmail');
+
 
 
 // Array com lista de endereço de e-mail de clientes.
@@ -14,24 +16,8 @@ const listaDeEmails = [
 // Função para verificar o dia da semana. Se segunda -> enviar email.
 function verificarDiaDaSemana() {
     const date = new Date();
-    const diaDaSemana = date.getDay();
-    return diaDaSemana === 2; // 1 representa segunda-feira
+    return date.getDay() === 1; // 1 representa segunda-feira
 }
-
-
-// Função para construir o corpo do e-mail.
-function corpoDoEmail() {
-    return "Esse é o corpo do email! Teste ok";
-}
-const body = corpoDoEmail();
-
-// Função para construir o assunto do e-mail.
-function assuntoDoEmail() {
-    return "subject é isso, tá querida!";
-}
-const subject = assuntoDoEmail();
-
-
 
 
 // Função para definir os destinatários.
@@ -47,8 +33,9 @@ function destinatariosDoEmail() {
 }
 
 
+
 // Verifique se é segunda-feira para enviar o e-mail:
-if (verificarDiaDaSemana(true)) {
+if (verificarDiaDaSemana()) {
     const addressee = destinatariosDoEmail();
 
     const body = corpoDoEmail();
@@ -56,9 +43,14 @@ if (verificarDiaDaSemana(true)) {
 
     // Envie email para cada destinatário
     for (const addressees of addressee) {
-        const resultadoEnvio = enviarEmail(addressee, subject, body);
-        console.log(resultadoEnvio); // Exiba o resultado do envio
+        try {
+            const resultadoEnvio = enviarEmail(addressee, subject, body);
+            console.log(resultadoEnvio.message); // Exiba o resultado do envio    
+        } catch (error) {
+            console.error("Erro ao enviar email para", addressee, error.message); // Exiba a mensagem de er
+        }
+        
     }
 } else {
-    console.log("No time for emails.");
+    console.log("Aguarde até a próxima segunda para receber novidades da CarStore!");
 }
