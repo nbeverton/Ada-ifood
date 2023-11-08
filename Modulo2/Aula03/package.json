@@ -1,0 +1,12 @@
+{
+  "name": "aula03",
+  "version": "1.0.0",
+  "description": "Primeiro projeto npm.",
+  "scripts": {
+    "start": "tsc && node ./dist/index.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "5.2.2"
+  }
+}
