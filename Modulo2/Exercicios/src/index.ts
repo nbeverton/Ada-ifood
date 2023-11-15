@@ -1,3 +1,3 @@
-import { Questionario } from "./questionario/index";
+import { Exercicio1 } from "./Exercicio01/index";
 
-Questionario();
+Exercicio1();
