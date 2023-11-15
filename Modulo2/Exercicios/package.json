@@ -1,0 +1,14 @@
+{
+  "name": "exercicios",
+  "version": "1.0.0",
+  "description": "Exercicios praticos curso ada - modulo 2",
+  "main": "index.js",
+  "scripts": {
+    "start": "rm -rf ./dist && tsc && node ./dist/index.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
+}
