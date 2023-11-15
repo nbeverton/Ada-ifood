@@ -11,7 +11,7 @@ class Carro {
 }
 
 
-const Exercicio1 = () => {
+const Exercicio01 = () => {
     const c1 = new Carro(1990, "branco", "fusca");
     const c2 = new Carro(2023, "vermelho", "dolphin");
 
@@ -19,4 +19,4 @@ const Exercicio1 = () => {
     console.log(c2);
 }
 
-export { Exercicio1 }
+export { Exercicio01 }

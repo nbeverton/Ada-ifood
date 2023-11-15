@@ -1,3 +1,5 @@
-import { Exercicio1 } from "./Exercicio01/index";
+import { Passarinho } from "./Exercicio02/Passaro";
+import { Doguinho } from "./Exercicio02/Cachorro";
 
-Exercicio1();
+Passarinho();
+Doguinho();
