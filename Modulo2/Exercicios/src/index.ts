@@ -1,3 +1,7 @@
-import { Resultados } from "./Exercico06";
+import { livroStatus } from "./Library/Livro";
+import { statusAutor } from "./Library/Autor";
+import { statusUsuario } from "./Library/Usuario";
 
-Resultados();
+livroStatus();
+statusAutor();
+statusUsuario();
