@@ -1,3 +1,3 @@
-import { Resultados } from "./Exercicio03";
+import { Resultados } from "./Exercicio04/index";
 
 Resultados();
