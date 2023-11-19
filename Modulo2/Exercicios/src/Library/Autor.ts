@@ -1,24 +1,26 @@
-class Autor{
-    nome: string;
-    dataDeNascimento: number;
+import { Livro } from "./Livro";
+
+export class Autor{
+    private nome: string;
+    dataDeNascimento: Date;
     nacionalidade: string;
+    livros: Livro[] = [];
 
-    livros: string[] = ["HP1", "HP2", "HP3"]
-
-    adicionarLivroAoAutor(titulo: string){
-        this.livros.push(titulo);
+    constructor(nome: string, dataDeNascimento: Date, nacionalidade: string, livros: Livro[] = []){
+        this.nome = nome;
+        this.dataDeNascimento = dataDeNascimento;
+        this.nacionalidade = nacionalidade;
+        this.livros = livros;
     }
 
-    removerLivroAoAutor(titulo: string){
-        this.livros.pop();
-    }
-}
+    // adicionarLivroAoAutor(titulo: string){
+    //     this.livros.push(titulo);
+    // }
 
-const statusAutor = () => {
-    const autor1 = new Autor;
-    autor1.adicionarLivroAoAutor("HP4")
-    console.log(autor1.livros);
-    
+    // removerLivroAoAutor(titulo: string){
+    //     const index = this.livros.indexOf(titulo);
+    //     if(index !== -1){
+    //         this.livros.splice(index, 1);
+    //     }
+    // }
 }
-
-export { statusAutor };

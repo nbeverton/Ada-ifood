@@ -1,26 +1,37 @@
-class Livro{
+import { Autor } from "./Autor";
+
+export class Livro{
     titulo: string;
     autor: string;
     anoPublicacao: number;
     genero: string;
+    emprestado: boolean = false;
 
-    constructor(titulo: string){
+    constructor(titulo: string, autor: string, anoPublicacao: number, genero: string, emprestado: boolean){
         this.titulo = titulo;
+        this.autor = autor;
+        this.anoPublicacao = anoPublicacao;
+        this.genero = genero;
+        this.emprestado = emprestado;
     }
 
-    emprestar(): void{
-        console.log("Livro emprestado com sucesso!");
+    emprestarLivro() {
+        if (!this.emprestado) {
+            this.emprestado = true;
+            return true;
+          } else {
+            console.log("Livro já emprestado.");
+            return false;
+          }
     }
-    devolver(): void{
-        console.log("Livro devolvido. Tudo ok!");
+
+    devolverLivro() {
+        if (this.emprestado) {
+            this.emprestado = false;
+            return true;
+          } else {
+            console.log("Livro não está emprestado.");
+            return false;
+          }
+        }
     }
-}
-
-
-const livroStatus = () => {
-    const livro1 = new Livro("HP");
-    livro1.emprestar();
-    console.log(livro1.titulo);
-}
-
-export { livroStatus };
