@@ -1,7 +1,7 @@
 import { Livro } from "./Livro";
 
 export class Autor{
-    private nome: string;
+    nome: string;
     dataDeNascimento: Date;
     nacionalidade: string;
     livros: Livro[] = [];
@@ -12,15 +12,4 @@ export class Autor{
         this.nacionalidade = nacionalidade;
         this.livros = livros;
     }
-
-    // adicionarLivroAoAutor(titulo: string){
-    //     this.livros.push(titulo);
-    // }
-
-    // removerLivroAoAutor(titulo: string){
-    //     const index = this.livros.indexOf(titulo);
-    //     if(index !== -1){
-    //         this.livros.splice(index, 1);
-    //     }
-    // }
 }

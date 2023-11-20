@@ -1,8 +1,8 @@
 import { Livro } from "./Livro";
 
 export class Usuario{
-    nome: string;
-    email: string;
+    private nome: string;
+    private email: string;
     livroEmprestado: Livro[] = [];
 
     constructor(nome: string, email: string){
@@ -10,7 +10,23 @@ export class Usuario{
         this.email = email;
     }
 
-    pegarLivroEmprestado(livro: Livro){
+    getNome(): string {
+        return this.nome;
+      }
+
+    setNome(novoNome: string): void {
+       this.nome = novoNome;
+    }
+
+    getEmail(): string {
+        return this.email;
+    }
+
+    setEmail(novoEmail: string): void {
+        this.email = novoEmail;
+    }
+
+    pegarLivroEmprestado(livro: Livro): boolean{
         if (!livro.emprestado) {
             livro.emprestarLivro();
             this.livroEmprestado.push(livro);
@@ -21,7 +37,7 @@ export class Usuario{
           }
     }
 
-    devolverLivroEmprestado(livro: Livro) {
+    devolverLivroEmprestado(livro: Livro): boolean {
         const index = this.livroEmprestado.indexOf(livro);
         if (index !== -1) {
           livro.devolverLivro();

@@ -4,11 +4,15 @@
   "description": "Exercicios praticos curso ada - modulo 2",
   "main": "index.js",
   "scripts": {
-    "start": "rm -rf ./dist && tsc && node ./dist/index.js"
+    "start": "rm -rf ./dist && tsc && node ./dist/index.js",
+    "test": "jest"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@types/jest": "^29.5.8",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.1",
     "typescript": "^5.2.2"
   }
 }
