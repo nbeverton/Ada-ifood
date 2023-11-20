@@ -1,4 +1,5 @@
 import { Autor } from "./Autor";
+import { dataBase } from "./DB";
 import { Livro } from "./Livro";
 import { Usuario } from "./Usuario";
 // import { dataBase } from "./DB";
@@ -118,6 +119,11 @@ export class Biblioteca{
     }
 
     // Imprimir livros emprestados relacionando o Usuário que o pegou:
+
+    initializeDataBase(): void {
+        dataBase(this);
+    }
+
     emprestarLivroParaUsuario(livro: Livro, usuario: Usuario): boolean {
         if (livro.emprestado || !this.livrosCadastrados.includes(livro) || !this.usuariosCadastrados.includes(usuario)) {
           return false;

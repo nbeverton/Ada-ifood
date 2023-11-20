@@ -3,7 +3,9 @@ import { Livro } from "./Livro";
 import { Usuario } from "./Usuario";
 import { Biblioteca } from "./Biblioteca";
 
-const dataBase = (biblioteca: Biblioteca) => {
+
+// Serve apenas como banco de dados para a aplicação.
+const dataBase = (biblioteca: Biblioteca): void => {
 
     const livro1 = new Livro("livro1", "fulano", 1990, "ficcao total", true);
     const livro2 = new Livro("livro2", "cicrano", 1991, "ficcao total", true);
@@ -57,6 +59,8 @@ const dataBase = (biblioteca: Biblioteca) => {
   
     biblioteca.adicionarUsuario(usuario1);
     biblioteca.adicionarUsuario(usuario2);
+
+    biblioteca.emprestarLivroParaUsuario(livroGOT3, usuario2);
 }
 
 export { dataBase };
