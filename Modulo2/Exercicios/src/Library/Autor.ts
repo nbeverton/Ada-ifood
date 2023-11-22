@@ -12,4 +12,6 @@ export class Autor{
         this.nacionalidade = nacionalidade;
         this.livros = livros;
     }
+
+    
 }
