@@ -6,20 +6,13 @@ export class Cliente {
     private _tipoCarteira: string
     private _veiculoAlugado: string | null = null
 
-    constructor(cpf: string, nome: string, tipoCarteira: string) {
-        this._cpf = cpf
-        this._nome = nome
-        this._tipoCarteira = tipoCarteira
+    constructor(novoCliente: TCliente) {
+        this._cpf = novoCliente.cpf
+        this._nome = novoCliente.nome
+        this._tipoCarteira = novoCliente.tipoCarteira
 
     }
 
-    // get dados() {
-    //     return Cliente
-    // }
-
-    // set tipoCarteira(tipoCarteira: string) {
-    //     this._tipoCarteira = tipoCarteira
-    // }
 
     static buscarCliente(): Array<TCliente> {
         return JSON.parse(fs.readFileSync("./src/dados/clientes.json", "utf-8"))
@@ -27,7 +20,10 @@ export class Cliente {
     
     static buscarClientePorCpf(cpf: string): TCliente | undefined {
         const clientes = Cliente.buscarCliente();
-        return clientes.find(cliente => cliente.cpf === cpf)
+        const cliente = clientes.find(cliente => cliente.cpf === cpf)
+        if(cliente) {
+            return cliente 
+        }
     }
 
     adicionarCliente(): void {
